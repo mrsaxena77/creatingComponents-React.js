@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+
+
+    <!-- react liberary link -->
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js">
+    </script>
+
+    <!-- ReactDOM liberary link -->
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js">
+    </script>
+
+    <!-- link of babel which is a transpiler that convert jsx code to js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.3/babel.min.js"
+        integrity="sha512-CLQR0eNf/5JIWYwhNK7UGxMT2gZRouZm46rXlZHIye6Zk9ZWHKrGGbRkdPSzehgzBNSoTN/Sm3NGBjzgGgRpgw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
+
+    <script type="text/jsx">
+
+        let App = function() {
+            return (
+                <div>
+                    <h1>Rohit</h1>
+                    <h2>Saxena</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas fugiat natus nesciunt modi qui. Velit aut, numquam nam obcaecati incidunt autem provident expedita aliquam. Quos, libero aperiam. Harum, fugiat corporis.</p>
+                </div>
+            );
+        };
+
+        // line 44: shows the single output on web page 
+        ReactDOM.render(<App />, document.querySelector("#root")); 
+        
+
+        // line 48: shows the same output in multiple div, as the <App /> has been called.
+        ReactDOM.render(<div>
+            <App />
+            <App />
+        </div>, document.querySelector("#root"));
+ 
+Above one creating a function Component......
+
+
+-------------Same Code in Different Ways-----------------
+
+
+Lower one is creating a Class Component.......
+
+       class Counter extends React.Component {
+
+        state = {
+            currVal: 0
+        };
+           render () {
+               return (
+                   <div>
+                       <p> {this.state.currVal} </p>
+                       <button> </button> 
+                   </div>
+               );
+           };
+       };
+
+       ReactDOM.render(<Counter />, document.querySelector("#root"));
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+using JavaScript in React HTML with State
+
+
+
+class Counter extends React.Component {
+    state = {
+        currVal: 0
+    };
+
+    render() {
+        return (
+            <div>
+                <p> { this.state.currVal } </p>
+                <button> Submit </button>
+            </div>
+        );
+    };
+};
+
+ReactDOM.render(<Counter />, document.querySelector("#root"));
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>

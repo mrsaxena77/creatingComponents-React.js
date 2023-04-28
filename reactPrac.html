@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div id="root"></div>
+
+
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.21.4/babel.min.js" integrity="sha512-FneB6sFwq3OQG08dlVoj9iDn0XZG68wD9yg80ofbMCCzW8BioIgsAwSciFaVjM77PdsKdvz3kt/5MKwd+KVGDw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+    <script type="text/jsx">
+
+        class Counter extends React.Component {
+
+            state = {
+                currVal: 0
+            };
+
+            render () {
+                return (
+                    <div>
+                        <button onClick = {
+                            () => {
+                                this.setState({currVal: this.state.currVal + 1});
+                            }
+                        }> + </button>
+                        <p> { this.state.currVal } </p>
+                        <button onClick = {
+                            ()=> {
+                                this.setState({currVal: this.state.currVal - 1});
+                            }
+                        }> - </button>
+                    <hr/>
+                    </div>
+                );
+            };
+        };
+
+        ReactDOM.render(<div>
+            <Counter />
+            
+            <Counter />
+            
+            <Counter />
+            
+            <Counter />
+            </div>, document.querySelector("#root"));
+
+    </script>
+
+</body>
+
+</html>
